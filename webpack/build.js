@@ -15,7 +15,6 @@ const PATHS = {
 	font_awesome: path.join(__dirname, '../font-awesome-4.6.3/css/font-awesome.css')
 }
 
-
 const env = {
 	'process.env.NODE_ENV': JSON.stringify('production')
 }
@@ -46,7 +45,7 @@ const config = {
 				loader: 'file-loader?name=fonts/[name].[ext]'
 			},
 			{
-				test: /\.(png|jpg)$/,
+				test: /\.(png|jpg|gif)$/,
 				loader: 'url-loader?limit=8192'
 			}
 		]
@@ -57,7 +56,7 @@ const config = {
 			inject: 'body',
 			chunksSortMode: 'dependency'
 		}),
-		new CleanWebpackPlugin({
+		new CleanWebpackPlugin([PATHS.build], {
 			root: process.cwd()
 		}),
 		new webpack.DefinePlugin(env),
