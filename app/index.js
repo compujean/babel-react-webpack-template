@@ -3,7 +3,7 @@ import ReactDom from 'react-dom';
 
 import 'normalize.css';
 import './main.css';
-// import '../font-awesome-4.6.3/css/font-awesome.css';
+import 'font-awesome-webpack';
 
 import Root from './components/Root';
 
